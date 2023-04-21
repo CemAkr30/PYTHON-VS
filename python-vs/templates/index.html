@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% block body %}
+<div class="jumbotron text-center">
+  <h3>Yazılım Bilimi Bloğuna Hoşgeldiniz</h3>
+  <p>
+    Yazılım Bilimi Bloğu, yazılım geliştirme ile ilgili yazılar yazan bir
+    blogdur.
+  </p>
+</div>
+
+{% if islem == 1 %}
+<p>Cevabımız Evetmiş</p>
+{% elif islem == 2 %}
+<p>Cevabımız Belkiymiş</p>
+{% else %}
+<p>Cevabımız Hayırmış</p>
+{% endif %}
+
+<ul>
+  {% for i in users %}
+  <li>
+    {{ " Id : {} - Name : {} - Surname: {} ".format(i.id,i.name,i.surname) }}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
